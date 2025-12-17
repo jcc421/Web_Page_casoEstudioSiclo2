@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portal Web</title>
+    <style>
+      body {
+        background-color: #1f1f1f;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        font-size: 75px;
+        font-style: italic;
+        text-align: center;
+      }
+      h2 {
+        margin-top: 50px;
+      }
+      table {
+        width: 100%;
+        border: 2px solid #ffffff;
+        border-radius: 8px;
+        margin: 20px;
+        padding: 8px;
+        text-align: center;
+      }
+      td {
+        background-color: crimson;
+        border-radius: 5px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 8px;
+        margin: 6px;
+      }
+      button {
+        margin-top: 10px;
+      }
+      label {
+        font-size: 17px;
+        padding: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicio 1Web</h1>
+
+    <p>Este documento muestra etiquetas html y css</p>
+
+    <h2>Texto e imagenes</h2>
+
+    <ul>
+      <li>Elemento uno</li>
+      <li>Elemento dos</li>
+      <li>Elemento tres</li>
+    </ul>
+
+    <table>
+      <tr>
+        <td>producto</td>
+
+        <td>Precio</td>
+      </tr>
+
+      <tr>
+        <td>Laptop</td>
+        <td>2000</td>
+      </tr>
+
+      <tr>
+        <td>Televisor</td>
+        <td>140000</td>
+      </tr>
+    </table>
+
+    <form onsubmite="return mostrarMensaje()">
+      <div>
+        <label>Nombre:</label>
+        <input id="usuario" type="text" placeholder="Escribe nombre" />
+      </div>
+      <div></div>
+      <div>
+        <label>Correo:</label>
+        <input type="email" />
+      </div>
+      <div>
+        <label>Mensaje:</label>
+        <textarea rows="5" placeholder="Escribe un mensaje"></textarea>
+      </div>
+      <div>
+        <label>telefono:</label>
+        <input type="number" />
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+    <form onsubmit="return mostrarMensaje()">
+      <p id="Saludo">Hola</p>
+      <p id="SaludoInicial">Hola Como estas</p>
+
+      <h2>Login</h2>
+      <form onsubmit="return validarlogin()">
+        <div>
+          <label>Usuario:</label>
+          <input type="text" id="usuarioLogin" />
+        </div>
+        <label>Contrasena:</label>
+        <input type="password" id="passwordlogin" />
+        <div>
+          <button type="submit">Ingresar</button>
+        </div>
+      </form>
+      <script>
+        document.getElementById("Saludo").textContent = "Hola Mundo";
+        document.getElementById("SaludoInicial").textContent =
+          "Hola Como estas";
+
+        function mostrarMensaje() {
+          const nombre = document.getElementById("usuario").value;
+          const mensaje = document.getElementById("SaludoInicial").value;
+          if (nombre == "") {
+            mensaje.textContent = "Por favor, ingerese su nombre";
+          } else {
+            mensaje.textContent = "Hola" + nombre + " Gracias por conectarte ";
+          }
+
+          return false;
+        }
+
+        function validarLogin() {
+          const usuarioValido = "admin";
+          const passwordValido = "12345";
+
+          const usuario = document.getElementById("usuarioLogin").value;
+          const password = document.getElementById("passwordLogin").value;
+          const mensajeLogin = document.getElementById("mensajeLogin");
+
+          if (usuario == "" || password == "") {
+            mensajeLogin.textContent = "Por favor complete todos los campos";
+          } else if (usuario == usuarioValido && password == passwordValido) {
+            mensajeLogin.textContent = "Login exitoso, bienvenido " + usuario;
+          } else {
+            mensajeLogin.textContent = "Usuario o contrasena incorrectos";
+          }
+          return false;
+        }
+      </script>
+    </form>
+  </body>
+</html>
