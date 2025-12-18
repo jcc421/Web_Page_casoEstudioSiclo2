@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Web</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #1f1f1f;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        font-size: 75px;
+        font-style: italic;
+        text-align: center;
+      }
+      input,
+      textarea {
+        width: 23%;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 8px;
+        margin: 6px;
+      }
+      button {
+        margin-top: 10px;
+      }
+      label {
+        font-size: 17px;
+        padding: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <form onsubmit="return mostrarMensaje()">
+      <div>
+        <label>Full Name:</label>
+        <input id="usuario" type="text" placeholder="Write your name" />
+      </div>
+      
+      <div>
+        <label>Email:</label>
+        <input type="email" placeholder="example123@email.com" />
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" placeholder="example123" />
+      </div>
+      <button type="submit">Enter</button>
+    </form>
+    
+  </body>
+</html>
