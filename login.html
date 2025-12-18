@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
   <style>
-    body {
-      background-color: #1f1f1f;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 20px;
-    }
+    
+    
     h2 {
       margin-top: 50px;
     }
@@ -32,7 +29,20 @@
     }
     </style>
 </head>
-<body>
+<body class="bodyA">
+  <nav class="navbar navbar-brand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">G-Alterion</a>
+        <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Checkout.html">your cart</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   <h2>Login</h2>
   <form onsubmit="return mostrarMensaje()">
       <p id="initialmesage">Please enter your user and your password</p>

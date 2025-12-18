@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal Web</title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <style>
       body {
         background-color: #1f1f1f;
@@ -36,7 +37,20 @@
       }
     </style>
   </head>
-  <body>
+  <body class="bodyA">
+    <nav class="navbar navbar-brand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">G-Alterion</a>
+        <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Checkout.html">your cart</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <h1></h1>
     <form onsubmit="return mostrarMensaje()">
       <div>
