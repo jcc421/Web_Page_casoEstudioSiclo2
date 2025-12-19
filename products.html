@@ -6,25 +6,17 @@
     <title>Gatgets</title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="CSS/style.css" />
-    <style>
-      body {
-        background-color: #1f1f1f;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 20px;
-      }
-    </style>
+    
   </head>
-  <body>
+  <body class="bodyA">
     <nav class="navbar navbar-brand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">G-Alterion</a>
         <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+         
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Checkout.html">your cart</a>
+            <a class="nav-link" href="Cart.html"> >Check Your cart< </a>
+            Cart (<span id="cart-count">0</span>)
           </li>
         </ul>
       </div>
@@ -78,8 +70,12 @@
                 <p class="card-text">
                   High-quality fidget spinner to keep your hands busy.
                 </p>
-                <p class="card-text"><strong>$9.99</strong></p>
-                <a href="#" class="btn btn-outline-dark">Add to Cart</a>
+                <p class="card-text"><strong>$79.99</strong></p>
+                <a href="#" 
+                class="btn btn-outline-dark add-to-cart" 
+                data-price="79.99"
+                data-name="Black Hole">
+                Add to Cart</a>
               </div>
             </div>
 
@@ -96,8 +92,11 @@
                 <p class="card-text">
                   A sleek slider for smooth tactile feedback.
                 </p>
-                <p class="card-text"><strong>$12.99</strong></p>
-                <a href="#" class="btn btn-outline-dark">Add to Cart</a>
+                <p class="card-text"><strong>$79.99</strong></p>
+                <a href="#" class="btn btn-outline-dark add-to-cart" 
+                data-price="79.99"
+                data-name="Pulsar">
+                Add to Cart</a>
               </div>
             </div>
 
@@ -114,8 +113,12 @@
                 <p class="card-text">
                   Fidget spinner with intcrusted metal balls
                 </p>
-                <p class="card-text"><strong>$15.99</strong></p>
-                <a href="#" class="btn btn-outline-dark">Add to Cart</a>
+                <p class="card-text"><strong>$9.99</strong></p>
+                <a href="#" 
+                class="btn btn-outline-dark add-to-cart"
+                data-price="9.99"
+                data-name="Triple-shot">
+                Add to Cart</a>
               </div>
             </div>
 
@@ -128,13 +131,69 @@
                 <p class="card-text">
                   A calming fidget spinner with smooth rotation.
                 </p>
-                <p class="card-text"><strong>$12.99</strong></p>
-                <a href="#" class="btn btn-outline-dark">Add to Cart</a>
+                <p class="card-text"><strong>$29.99</strong></p>
+                <a href="#" 
+                class="btn btn-outline-dark add-to-cart" 
+                data-price="29.99"
+                data-name="Damascus Spinner">
+                Add to Cart</a>
               </div>
             </div>
+
+            <!-- Product 5 -->
+            <div class="card">
+              <img
+                src="img/fidget-cube.jpg"
+                class="card-img-top"
+                alt="Gadget 5"
+              />
+              <div class="card-body">
+                <h5 class="card-title">DaCube</h5>
+                <p class="card-text">
+                  Multi functional cube with buttons, switches and gears.
+                </p>
+                <p class="card-text"><strong>$19.99</strong></p>
+                <a href="#" 
+                class="btn btn-outline-dark add-to-cart"
+                data-name="DaCube"
+                data-price="19.99">
+                Add to Cart
+              </a>
+              </div>
           </main>
         </div>
       </div>
     </section>
+    <script>
+      const buttons = document.querySelectorAll(".add-to-cart");
+
+buttons.forEach(button => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const product = {
+      name: this.dataset.name,
+      price: parseFloat(this.dataset.price)
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartCount();
+
+    alert(`${product.name} has been added to your cart!`);
+  });
+});
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").textContent = cart.length;
+}
+
+updateCartCount();
+
+    </script>
   </body>
 </html>

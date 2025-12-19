@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body class="bodyA">
+    <nav class="navbar navbar-brand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">G-Alterion</a>
+        <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="Cart.html">Your cart</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h2 class="container text-center" style="margin-top: 50px">
+      One more step
+    </h2>
+    <div class="checkout-deco">
+      <form id="checkoutForm">
+        <p id="initialmesage" class="text-center mb-4">
+          To continue with payment, please give the next information
+        </p>
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="userName"
+            class="form-control"
+            placeholder="Full name"
+          />
+        </div>
+        <input
+          type="text"
+          id="Direction"
+          class="form-control"
+          placeholder="Direction"
+        />
+        <div class="form-group">
+          <input
+            type="text"
+            id="contactNumber"
+            class="form-control"
+            placeholder="phone number"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="cardNumber"
+            class="form-control"
+            placeholder="Card number"
+          />
+        </div>
+        <div class="form-group">
+          <input type="text" id="cvv" class="form-control" placeholder="CVV" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-light w-100 mt-3">
+            Confirm purchase
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("checkoutForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const userName = document.getElementById("userName").value;
+        const direction = document.getElementById("Direction").value;
+        const contactNumber = document.getElementById("contactNumber").value;
+        const cardNumber = document.getElementById("cardNumber").value;
+        const cvv = document.getElementById("cvv").value;
+
+        if (
+          userName === "" ||
+          direction === "" ||
+          contactNumber === "" ||
+          cardNumber === "" ||
+          cvv === ""
+        ) {
+          alert("Please fill in all the fields.");
+          return;
+        }
+
+        alert("Thank you for your purchase!");
+        localStorage.removeItem("cart");
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

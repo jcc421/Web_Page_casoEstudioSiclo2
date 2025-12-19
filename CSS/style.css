@@ -1,11 +1,8 @@
-body {
-  margin: 0;
-  
-}
+
 .bodyA {
   background-color: #131313;
       color: white;
-      font-family: Arial, Helvetica, sans-serif;
+      font: helvetica lighter;
 }
 .navbar {
   padding-top: 20px;
@@ -47,7 +44,44 @@ body {
 }
 .products-display{
   display: grid;
-  grid-template-columns: 360px repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   align-items: stretch;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+.card-body .btn {
+  margin-top: auto;
+}
+.checkout-deco {
+  max-width: 420px;
+  margin: 60px auto;
+}
+
+.form-control {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.form-control::placeholder {
+  color: #888;
+}
+
+.form-control:focus {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-color: #7dd3fc;
+  box-shadow: none;
 }
