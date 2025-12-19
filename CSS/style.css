@@ -14,7 +14,7 @@ body {
 .hero {
   min-height: 100vh;
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%),
     url("../img/hero-bg.jpg");
 
   background-size: cover;
@@ -40,4 +40,14 @@ body {
   letter-spacing: 0.5px;
   opacity: 0.9;
   line-height: 1.6;
+}
+.filters {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 20px;
+}
+.products-display{
+  display: grid;
+  grid-template-columns: 360px repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
 }

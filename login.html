@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Login</title>
   <link rel="stylesheet" href="CSS/bootstrap.min.css" />
   <link rel="stylesheet" href="CSS/style.css" />
   <style>
@@ -43,17 +43,16 @@
         </ul>
       </div>
     </nav>
-  <h2>Login</h2>
+  <h2 class="container text-center">Login</h2>
   <form onsubmit="return mostrarMensaje()">
-      <p id="initialmesage">Please enter your user and your password</p>
-    </form>  
+      <p id="initialmesage" class="text-center">Please enter your user and your password</p>
+  </form>  
       <form onsubmit="return validarlogin()">
         <div>
-          <label>User:</label>
-          <input type="text" id="usuarioLogin" />
+          
+          <input class="" type="text" id="usuarioLogin" placeholder="User"/>
         </div>
-        <label>Password:</label>
-        <input type="password" id="passwordLogin" />
+        <input type="password" id="passwordLogin" placeholder="Password"/>
         <div>
           <button type="submit">login</button>
         </div>
@@ -77,6 +76,6 @@
           return false;
         }
       </script>
-    </form>
+      </form>
 </body>
 </html>
